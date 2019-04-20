@@ -5,7 +5,7 @@
 #data stored in flight_databse.db; change file name if downloading new data
 .open flight_database.db
 
-#Setup fligts 'table'
+#Setup table 'flights' for import from csv
 CREATE TABLE flights(
 "airline" TEXT,
 "flight_number" INTEGER,
@@ -18,6 +18,7 @@ CREATE TABLE flights(
 
 .import flights.csv flights
 
+#Setup table 'airports' for import from csv
 CREATE TABLE airports(
 "airport_code" TEXT,
 "airport" TEXT,
@@ -29,7 +30,7 @@ CREATE TABLE airports(
 
 .import airports.csv airports
 
-                         
+#Setup table 'airlines' for import from csv                      
 CREATE TABLE airlines(   
 "airline_code" TEXT,     
 "airline"  TEXT          
@@ -38,7 +39,6 @@ CREATE TABLE airlines(
 .import airlines.csv airlines
                          
 -- (b) Build indexes     
--- [insert sql statement(s) below]
                          
 CREATE INDEX flights_airline_index ON flights(airline);
 CREATE INDEX flights_origin_airport_index ON flights(origin_airport);
@@ -47,7 +47,7 @@ CREATE INDEX airport_airport_index ON airports(airport_code);
 CREATE INDEX airlines_airline_index ON airlines(airline_code);
                          
 -- (c) Quick computations.
--- [insert sql statement(s) below]
+
 SELECT count(*)          
 FROM flights             
 WHERE (destination_airport = "SEA" AND arrival_delay > 20);
@@ -59,7 +59,7 @@ WHERE (origin_airport = "SFO" AND departure_delay > 20);
 select '';               
                          
 -- (d) Average delay of flights per airline 
--- [insert sql statement(s) below]
+
 -- code inner joins with the airlines table
                          
 SELECT airlines.airline, avg(arrival_delay)
@@ -84,9 +84,7 @@ LIMIT 30;
 select '';               
                          
 -- (f) Percentage of delayed flights
--- [insert sql statement(s) below]
                          
----------><><><><><><>><><><><><><><><><><><><><><><><><>M<M><><><><><><><><><
 
 SELECT airports.airport, t3.latepercent
 FROM(
@@ -110,7 +108,6 @@ LIMIT 20;
 select '';               
                          
 -- (g) Creating a view   
--- [insert sql statement(s) below]
 
 -- CREATE VIEW
 CREATE VIEW airport_distances AS                        
@@ -133,32 +130,6 @@ FROM( SELECT * FROM airport_distances);
                          
 select '';               
                          
--- (i) Create and import data into FTS table movie_overview.
--- [insert sql statement(s) below]
-CREATE VIRTUAL TABLE movie_overview USING fts3(
-"id" INTEGER,
-"name" TEXT,
-"year" INTEGER,
-"overview" TEXT,
-"popularity" DECIMAL
-);
 
-.import movie-overview.txt movie_overview                   
-                         
--- (i) part 1            
--- [insert sql statement(s) below]
-SELECT COUNT(*)
-FROM movie_overview
-WHERE overview MATCH 'when';                      
-                         
-select '';               
-                         
--- (i) part 2            
--- [insert sql statement(s) below]
-SELECT id
-FROM movie_overview
-WHERE overview MATCH 'love NEAR/7 hate'  
-ORDER BY id ASC;                       
---there is only one ID that meets the criteria, because there are only two overview w/ the word 'hate'
 
                          
