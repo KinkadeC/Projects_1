@@ -1,0 +1,9 @@
+-Remove all links to outdated data sources
+-Confirm code works with updated API's, data pulls, etc. 
+-Update documentation as needed
+
+Files in private repo that need to be sanitized for public upload:
+-Google maps API Python script (~2 files)
+-R projects (~20 files)
+-Pig file (1 file)
+-d3 demo (1 file)
