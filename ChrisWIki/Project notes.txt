@@ -1,0 +1,5 @@
+Use TiddlyWiki and deploy here via node.js or simple html
+
+-What's the best way to update it? 
+--Want to be able to do it from multiple computers (maybe phone??)
+--Want to be able to update frequently
