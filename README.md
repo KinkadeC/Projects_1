@@ -1,3 +1,2 @@
-# Projects
-Various Projects in Python, R, SQL, etc.
-TEST
+# Main repo for my current projects
+#### Languages: Python, R, SQL
