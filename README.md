@@ -1,2 +1,4 @@
-# Main repo for my current projects
+# Main repo for current projects
 #### Languages: Python, R, SQL
+
+
