@@ -1,0 +1,21 @@
+scp -i path/to/key file/to/copy user@ec2-xx-xx-xxx-xxx.compute-1.amazonaws.com:path/to/file
+
+ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com
+
+scp -i C:\Users\kinka\Desktop\api_keys\ec2_key_001.ppk packages.zip ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com:
+scp -i C:/Users/kinka/Desktop/api_keys/ec2_key_001.ppk packages.zip ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com:/
+
+E:\Downloads KE
+
+scp -i E:\Downloads KE\keys001.pem packages.zip ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com:/
+
+scp -i /mnt/c/Users/kinka/Linuxsubsysme/keys001.pem packages.zip ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com:/
+
+scp -i ~/.ssh/key001 packages.zip ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com:/home/ec2-user/
+
+#below to copy from instance
+scp -i ~/.ssh/key001 ec2-user@ec2-3-136-155-94.us-east-2.compute.amazonaws.com:/home/ec2-user/packages.zip /mnt/c/Users/kinka/Linuxsubsysme/
+
+
+
+C:/Users/kinka/Desktop/api_keys/ec2_key_001.ppk
